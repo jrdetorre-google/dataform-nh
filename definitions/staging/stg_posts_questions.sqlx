@@ -15,4 +15,4 @@ select
   parent_id
 from
   ${ref("posts_questions")}
-where creation_date > timestamp
+where creation_date > timestamp("2021-12-31")
