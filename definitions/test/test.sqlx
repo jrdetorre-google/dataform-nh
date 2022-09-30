@@ -1,5 +1,6 @@
 config {
 type: "table",
-schema: "test"
+schema: "test",
+tags: ["test"]
 }
 select 1 as uno
