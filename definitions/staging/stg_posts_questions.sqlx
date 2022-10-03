@@ -12,7 +12,8 @@ select
   title,
   body,
   owner_user_id,
-  parent_id
+  parent_id,
+  tags
 from
   ${ref("posts_questions")}
 where creation_date > timestamp("2021-12-31")
