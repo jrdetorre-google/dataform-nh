@@ -15,4 +15,4 @@ FROM (
     ON tag = tags_grades.tag_name
 GROUP BY 1, 2
 ORDER BY 3 DESC
-LIMIT 10
+LIMIT 100
