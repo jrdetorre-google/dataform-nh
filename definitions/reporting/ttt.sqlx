@@ -1,8 +1,8 @@
 config {
 type: "table",
 schema: "reporting",
-tags: ["reporting"],
-description: "Combine both tag-count and tag-grade and get the trending tag"
+ tags: ["daily", "reporting"],
+ description: "Combine both tag-count and tag-grade and get the trending tag"
 }
 
 SELECT tag, tags_grades.grade, COUNT(*) count
