@@ -1,0 +1,12 @@
+config {
+  type: "view",
+  schema: "staging",
+  description: "Cleaned version of stackoverflow.tags",
+  tags: ["staging"]
+}
+
+select
+  tag_name,
+  count as grade
+from
+  ${ref("tags")}
