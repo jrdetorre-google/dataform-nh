@@ -3,4 +3,4 @@ type: "table",
 schema: "test",
 tags: ["test"]
 }
-select 1 as uno
+select 1 as unos
