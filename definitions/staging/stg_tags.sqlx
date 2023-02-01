@@ -9,4 +9,4 @@ select
   tag_name,
   count as grade
 from
-  ${ref("tags")}
+  ${ref("tags_external")}
