@@ -2,7 +2,7 @@ config {
   type: "view",
   schema: "reporting",
   tags: ["daily", "reporting"],
-  description: "Create a summary table for all users including statistics on questions, answers and badges received.",
+  description: "Create a summary table for all users including statistics on questions, answers and badges received. test-demo",
   columns: {
     user_id: `A unique identifier for a user`,
     age: `The age of a user`,
