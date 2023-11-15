@@ -1,18 +1,28 @@
 config {
-type: "table",
-schema: "reporting",
- tags: ["daily", "reporting", "cloud_storage"],
- description: "Combine both tag-count and tag-grade and get the trending tag"
+    type: "table",
+    schema: "reporting",
+    tags: ["daily", "reporting", "cloud_storage"],
+    description: "Combine both tag-count and tag-grade and get the trending tag"
 }
 
-SELECT tag, tags_grades.grade, COUNT(*) count
+SELECT
+  tag,
+  tags_grades.grade,
+  COUNT(*) count
 FROM (
-  SELECT SPLIT(tags, '|') tags
-  FROM ${ref("posts_combined")} a
-  WHERE DATE(created_at) BETWEEN DATE_SUB(CURRENT_DATE(), INTERVAL 400 DAY) AND CURRENT_DATE()
-), UNNEST(tags) tag 
-  LEFT JOIN ${ref("stg_tags")} as tags_grades
-    ON tag = tags_grades.tag_name
-GROUP BY 1, 2
-ORDER BY 3 DESC
-LIMIT 100
+  SELECT
+    SPLIT(tags, '|') tags
+  FROM
+    ${ref("posts_combined")} a ),
+  UNNEST(tags) tag
+LEFT JOIN
+  ${ref("stg_tags")} AS tags_grades
+ON
+  tag = tags_grades.tag_name
+GROUP BY
+  1,
+  2
+ORDER BY
+  3 DESC
+LIMIT
+  100
